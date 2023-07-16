@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/firtsFragment"
-        android:name="cl.awakelab.recyclerviewexample.FirtsFragment"
+        android:name="cl.awakelab.recyclerviewexample.FirstFragment"
         android:label="fragment_firts"
-        tools:layout="@layout/fragment_firts" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firtsFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="cl.awakelab.recyclerviewexample.SecondFragment"
