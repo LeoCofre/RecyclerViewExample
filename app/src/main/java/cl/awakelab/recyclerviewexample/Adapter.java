@@ -43,7 +43,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         }
 
         public void showInformation(Image image){
+
             imageBinding.textView.setText(image.text);
+
             Glide.with(imageBinding.getRoot()).load(image.url).into(imageBinding.imageView);
             Bundle bundle = new Bundle();
             bundle.putString("url",image.url);

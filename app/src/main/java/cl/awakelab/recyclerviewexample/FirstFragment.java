@@ -57,16 +57,7 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
         FragmentFirstBinding binding;
         binding = FragmentFirstBinding.inflate(getActivity().getLayoutInflater());
-        Adapter adapter = new Adapter();
-        adapter.setImages((ArrayList<Image>) getData());
-        binding.recyclerView.setAdapter(adapter);
-        //binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
-        //binding.recyclerView.addItemDecoration(new DividerItemDecoration(binding.recyclerView.getContext(), DividerItemDecoration.VERTICAL));
 
-        return binding.getRoot();
-    }
-
-    private List<Image> getData() {
         Image item01 = new Image("Zhuo Cheng you", "https://unsplash.com/photos/UBvtBr_FmrY/download?force=true&w=640");
         imagenes.add(item01);
         Image item02 = new Image("billow926", "https://unsplash.com/photos/pNoP-qVwBFQ/download?force=true&w=640");
@@ -92,6 +83,10 @@ public class FirstFragment extends Fragment {
         Image item12 = new Image("Wesley Armstrong", "https://unsplash.com/photos/q0wqYpyWDpc/download?force=true&w=640");
         imagenes.add(item12);
 
-        return imagenes;
+        Adapter adapter = new Adapter();
+        adapter.setImages(imagenes);
+        binding.recyclerView.setAdapter(adapter);
+
+        return binding.getRoot();
     }
 }
