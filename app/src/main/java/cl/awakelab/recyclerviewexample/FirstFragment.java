@@ -86,7 +86,8 @@ public class FirstFragment extends Fragment {
         Adapter adapter = new Adapter();
         adapter.setImages(imagenes);
         binding.recyclerView.setAdapter(adapter);
-
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(binding.recyclerView.getContext(), DividerItemDecoration.VERTICAL));
         return binding.getRoot();
     }
 }
