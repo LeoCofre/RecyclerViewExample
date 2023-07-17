@@ -1,19 +1,15 @@
 package cl.awakelab.recyclerviewexample;
 
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
-
 import cl.awakelab.recyclerviewexample.databinding.ItemBinding;
+
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
@@ -22,8 +18,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @NonNull
     @Override
     public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemBinding binding = ItemBinding.inflate(LayoutInflater.from(parent.getContext()));
+        ItemBinding binding = ItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new ViewHolder(binding);
+
     }
 
     @Override
@@ -38,7 +35,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ItemBinding imageBinding;
+        public ItemBinding imageBinding;
 
         public ViewHolder(@NonNull ItemBinding binding) {
             super(binding.getRoot());
